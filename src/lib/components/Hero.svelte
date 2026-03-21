@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$lib/i18n.svelte';
+	import { asset } from '$app/paths';
 
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd/booking';
@@ -107,7 +108,7 @@
 		<!-- Visual / image side -->
 		<div class="hero-visual reveal reveal-delay-2">
 			<div class="hero-card">
-				<img src="/store.avif" alt="Clínica de Estética e Saúde em Lisboa" class="card-image" />
+				<img src={asset('/store.avif')} alt="Clínica de Estética e Saúde em Lisboa" class="card-image" />
 				<div class="card-info">
 					<div class="card-stat">
 						<span class="stat-num">35+</span>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$lib/i18n.svelte';
+	import { resolve, asset } from '$app/paths';
 
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd/booking';
@@ -24,8 +25,8 @@
 	<div class="wrapper footer-grid">
 		<!-- Brand -->
 		<div class="footer-brand">
-			<a href="/" class="footer-logo">
-				<img src="/favicon.png" alt="Logo" class="logo-img" />
+			<a href={resolve('/')} class="footer-logo">
+				<img src={asset('/favicon.png')} alt="Logo" class="logo-img" />
 				<div>
 					<span class="logo-name">Alexandra Gonçalves</span>
 					<span class="logo-sub">Estética &amp; Saúde</span>

@@ -4,9 +4,6 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { initLanguage } from '$lib/i18n.svelte';
 
-	export const prerender = true;
-	export const trailingSlash = 'always';
-
 	let { children } = $props();
 
 	$effect(() => {

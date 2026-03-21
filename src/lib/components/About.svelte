@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { t } from '$lib/i18n.svelte';
+	import { asset } from '$app/paths';
 
 	const attributes = $derived([
 		{ icon: '👩', label: t('about.attr1') },
@@ -16,7 +17,7 @@
 		<!-- Visual side -->
 		<div class="about-visual reveal">
 			<div class="portrait-frame">
-				<img src="/mom.webp" alt="Alexandra Gonçalves - Esteticista" class="portrait-photo" />
+				<img src={asset('/mom.webp')} alt="Alexandra Gonçalves - Esteticista" class="portrait-photo" />
 				<div class="portrait-badge">
 					<span class="badge-icon">✦</span>
 					<span>{t('about.badge')}</span>
