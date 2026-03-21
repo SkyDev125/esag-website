@@ -9,8 +9,8 @@ export type Service = {
 };
 
 export const CATEGORIES = [
-	'Destaques',
 	'Todos',
+	'Destaques',
 	'Massagens',
 	'Rosto',
 	'Depilação Feminina',

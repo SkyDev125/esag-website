@@ -178,6 +178,7 @@
 		flex-direction: column;
 		gap: 0.25rem;
 		padding-top: 0.25rem;
+		padding-right: 4.5rem;
 	}
 
 	.category-badge {
