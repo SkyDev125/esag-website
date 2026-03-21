@@ -1,12 +1,14 @@
 <script lang="ts">
-	const attributes = [
-		{ icon: '👩', label: 'Negócio feminino' },
-		{ icon: '🏳️‍🌈', label: 'LGBTQ+ friendly' },
-		{ icon: '♻️', label: 'Eco-consciente' },
-		{ icon: '🐾', label: 'Pet-friendly' },
-		{ icon: '👶', label: 'Família bem-vinda' },
-		{ icon: '♿', label: 'Acessível' }
-	];
+	import { t } from '$lib/i18n.svelte';
+
+	const attributes = $derived([
+		{ icon: '👩', label: t('about.attr1') },
+		{ icon: '🏳️‍🌈', label: t('about.attr2') },
+		{ icon: '♻️', label: t('about.attr3') },
+		{ icon: '🐾', label: t('about.attr4') },
+		{ icon: '👶', label: t('about.attr5') },
+		{ icon: '♿', label: t('about.attr6') }
+	]);
 </script>
 
 <section class="about section" id="sobre">
@@ -17,26 +19,22 @@
 				<img src="/mom.webp" alt="Alexandra Gonçalves - Esteticista" class="portrait-photo" />
 				<div class="portrait-badge">
 					<span class="badge-icon">✦</span>
-					<span>Altamente qualificada</span>
+					<span>{t('about.badge')}</span>
 				</div>
 			</div>
 		</div>
 
 		<!-- Content side -->
 		<div class="about-content">
-			<p class="section-label reveal">Sobre nós</p>
+			<p class="section-label reveal">{t('about.label')}</p>
 			<h2 class="section-title reveal reveal-delay-1">
-				Cuidado profissional,<br />experiência única
+				{t('about.title1')}<br />{t('about.title2')}
 			</h2>
 			<p class="section-subtitle reveal reveal-delay-2">
-				Bem-vindo ao nosso centro de estética em Lisboa! Oferecemos uma ampla variedade de
-				serviços de cuidados pessoais, incluindo massagens relaxantes e terapêuticas, drenagem
-				linfática, tratamentos faciais não invasivos, manicure, pedicure e depilação.
+				{t('about.subtitle')}
 			</p>
 			<p class="about-text reveal reveal-delay-2">
-				A nossa profissional altamente qualificada está pronta para ajudá-lo a cuidar de si e
-				sentir-se renovado. Agende hoje uma consulta connosco e experimente a diferença de uma
-				esteticista de alta qualidade.
+				{t('about.text')}
 			</p>
 
 			<!-- Brand attributes -->
@@ -52,13 +50,24 @@
 			<!-- Location -->
 			<div class="location-card reveal reveal-delay-4">
 				<div class="location-icon">
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+					<svg
+						width="18"
+						height="18"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle
+							cx="12"
+							cy="10"
+							r="3"
+						/>
 					</svg>
 				</div>
 				<div>
 					<p class="location-addr">Av. Duque de Loulé 103, Loja 5</p>
-					<p class="location-sub">1050-045 Lisboa · Próximo de transporte público</p>
+					<p class="location-sub">1050-045 Lisboa · {t('about.locationSub')}</p>
 				</div>
 			</div>
 		</div>

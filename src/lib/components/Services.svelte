@@ -3,13 +3,12 @@
 	import ServiceCard from './ServiceCard.svelte';
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
+	import { t } from '$lib/i18n.svelte';
 
 	let activeCategory: Category = $state('Todos');
 
 	const filtered = $derived(
-		activeCategory === 'Todos'
-			? services
-			: services.filter((s) => s.category === activeCategory)
+		activeCategory === 'Todos' ? services : services.filter((s) => s.category === activeCategory)
 	);
 </script>
 
@@ -17,10 +16,13 @@
 	<div class="wrapper">
 		<!-- Header -->
 		<div class="services-header">
-			<p class="section-label reveal">Os nossos serviços</p>
-			<h2 class="section-title reveal reveal-delay-1">Tudo o que precisa,<br />num só lugar</h2>
+			<p class="section-label reveal">{t('services.label')}</p>
+			<h2 class="section-title reveal reveal-delay-1">
+				{t('services.title1')}<br />{t('services.title2')}
+			</h2>
 			<p class="section-subtitle reveal reveal-delay-2">
-				{services.length} serviços disponíveis. Escolha a categoria e agende directamente na Fresha.
+				{services.length}
+				{t('services.subtitle')}
 			</p>
 		</div>
 
@@ -35,7 +37,7 @@
 						aria-selected={activeCategory === cat}
 						onclick={() => (activeCategory = cat)}
 					>
-						{cat}
+						{t(`categories.${cat}`)}
 					</button>
 				{/each}
 			</div>
@@ -51,12 +53,12 @@
 		</div>
 
 		<p class="services-note reveal">
-			Preços e disponibilidade actualizados em
+			{t('services.notePre')}
 			<a
 				href="https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd"
 				target="_blank"
-				rel="noopener"
-			>Fresha</a>.
+				rel="noopener">Fresha</a
+			>.
 		</p>
 	</div>
 </section>
@@ -74,7 +76,7 @@
 		left: 0;
 		right: 0;
 		height: 1px;
-		background: linear-gradient(90deg, transparent, rgba(0,0,0,0.05), transparent);
+		background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.05), transparent);
 	}
 
 	.services-header {
@@ -102,7 +104,7 @@
 		background: var(--cream);
 		padding: 0.35rem;
 		border-radius: 99px;
-		border: 1px solid rgba(0,0,0,0.03);
+		border: 1px solid rgba(0, 0, 0, 0.03);
 	}
 
 	.tab {

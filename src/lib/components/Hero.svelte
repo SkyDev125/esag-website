@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t } from '$lib/i18n.svelte';
+
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
 
@@ -23,26 +25,38 @@
 		<div class="hero-content">
 			<div class="hero-badge reveal">
 				<span class="badge-dot"></span>
-				Lisboa · Marquês de Pombal
+				{t('hero.badge')}
 			</div>
 
 			<h1 class="hero-title reveal reveal-delay-1">
-				Sinta-se
-				<span class="title-highlight">renovada</span>
-				a cada visita
+				{t('hero.title1')}
+				<span class="title-highlight">{t('hero.titleHighlight')}</span>
+				{t('hero.title2')}
 			</h1>
 
 			<p class="hero-sub reveal reveal-delay-2">
-				Centro de estética profissional em Lisboa. Massagens, faciais, manicure, pedicure e
-				depilação — com o cuidado que merece.
+				{t('hero.sub')}
 			</p>
 
 			<div class="hero-actions reveal reveal-delay-3">
 				<a href={BOOKING_URL} class="btn btn-gold" target="_blank" rel="noopener">
-					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-					Agendar Agora
+					<svg
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						><rect x="3" y="4" width="18" height="18" rx="2" /><line
+							x1="16"
+							y1="2"
+							x2="16"
+							y2="6"
+						/><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg
+					>
+					{t('hero.book')}
 				</a>
-				<a href="#serviços" class="btn btn-outline">Ver Serviços</a>
+				<a href="#serviços" class="btn btn-outline">{t('hero.services')}</a>
 			</div>
 
 			{#if rating}
@@ -57,24 +71,35 @@
 								stroke="var(--gold)"
 								stroke-width="2"
 							>
-								<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+								<polygon
+									points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+								/>
 							</svg>
 						{/each}
 					</div>
 					<span class="rating-text"
-						><strong>{rating.toFixed(1)}</strong> · {ratingCount} avaliações no Google</span
+						><strong>{rating.toFixed(1)}</strong> · {ratingCount} {t('hero.ratingGoogle')}</span
 					>
 				</div>
 			{:else}
 				<div class="hero-rating reveal reveal-delay-4">
 					<div class="rating-stars">
 						{#each Array(5) as _}
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" stroke="var(--gold)" stroke-width="2">
-								<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+							<svg
+								width="18"
+								height="18"
+								viewBox="0 0 24 24"
+								fill="var(--gold)"
+								stroke="var(--gold)"
+								stroke-width="2"
+							>
+								<polygon
+									points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+								/>
 							</svg>
 						{/each}
 					</div>
-					<span class="rating-text">Excelente · Altamente recomendada</span>
+					<span class="rating-text">{t('hero.ratingExcellent')}</span>
 				</div>
 			{/if}
 		</div>
@@ -86,37 +111,46 @@
 				<div class="card-info">
 					<div class="card-stat">
 						<span class="stat-num">35+</span>
-						<span class="stat-label">Serviços</span>
+						<span class="stat-label">{t('hero.statServices')}</span>
 					</div>
 					<div class="card-divider" aria-hidden="true"></div>
 					<div class="card-stat">
 						<span class="stat-num">5★</span>
-						<span class="stat-label">Avaliação</span>
+						<span class="stat-label">{t('hero.statRating')}</span>
 					</div>
 					<div class="card-divider" aria-hidden="true"></div>
 					<div class="card-stat">
 						<span class="stat-num">100%</span>
-						<span class="stat-label">Satisfação</span>
+						<span class="stat-label">{t('hero.statSatisfaction')}</span>
 					</div>
 				</div>
 			</div>
 
 			<!-- Floating pills -->
 			<div class="pill pill-top" aria-hidden="true">
-				<span>✦</span> Drenagem Linfática
+				<span>✦</span>
+				{t('hero.pill1')}
 			</div>
 			<div class="pill pill-bottom" aria-hidden="true">
-				<span>✦</span> Limpeza de Pele
+				<span>✦</span>
+				{t('hero.pill2')}
 			</div>
 		</div>
 	</div>
 
 	<!-- Scroll indicator -->
 	<div class="scroll-hint" aria-hidden="true">
-		<span>Descubra mais</span>
+		<span>{t('hero.scrollHint')}</span>
 		<div class="scroll-arrow">
-			<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-				<line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+			<svg
+				width="20"
+				height="20"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+			>
+				<line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
 			</svg>
 		</div>
 	</div>
@@ -176,12 +210,20 @@
 	}
 
 	@keyframes drift1 {
-		from { transform: translate(0, 0) scale(1); }
-		to   { transform: translate(40px, 30px) scale(1.1); }
+		from {
+			transform: translate(0, 0) scale(1);
+		}
+		to {
+			transform: translate(40px, 30px) scale(1.1);
+		}
 	}
 	@keyframes drift2 {
-		from { transform: translate(0, 0) scale(1); }
-		to   { transform: translate(-30px, -20px) scale(1.08); }
+		from {
+			transform: translate(0, 0) scale(1);
+		}
+		to {
+			transform: translate(-30px, -20px) scale(1.08);
+		}
 	}
 
 	/* Layout */
@@ -225,8 +267,15 @@
 	}
 
 	@keyframes pulse-dot {
-		0%, 100% { opacity: 1; transform: scale(1); }
-		50% { opacity: 0.5; transform: scale(1.3); }
+		0%,
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+		50% {
+			opacity: 0.5;
+			transform: scale(1.3);
+		}
 	}
 
 	.hero-title {
@@ -364,8 +413,13 @@
 	}
 
 	@keyframes float {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(-8px); }
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(-8px);
+		}
 	}
 
 	/* Scroll hint */
@@ -389,8 +443,13 @@
 	}
 
 	@keyframes bounce {
-		0%, 100% { transform: translateY(0); }
-		50% { transform: translateY(6px); }
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+		50% {
+			transform: translateY(6px);
+		}
 	}
 
 	/* Responsive */

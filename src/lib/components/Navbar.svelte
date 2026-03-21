@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { i18n, t, setLanguage } from '$lib/i18n.svelte';
+
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
 
@@ -13,12 +15,16 @@
 		return () => window.removeEventListener('scroll', handler);
 	});
 
-	const navLinks = [
-		{ href: '#sobre', label: 'Sobre' },
-		{ href: '#serviços', label: 'Serviços' },
-		{ href: '#avaliações', label: 'Avaliações' },
-		{ href: '#contacto', label: 'Contacto' }
-	];
+	const navLinks = $derived([
+		{ href: '#sobre', label: t('nav.about') },
+		{ href: '#serviços', label: t('nav.services') },
+		{ href: '#avaliações', label: t('nav.reviews') },
+		{ href: '#contacto', label: t('nav.contact') }
+	]);
+
+	function toggleLang() {
+		setLanguage(i18n.locale === 'pt' ? 'en' : 'pt');
+	}
 </script>
 
 <header class="navbar" class:scrolled>
@@ -41,8 +47,11 @@
 
 		<!-- CTA + Mobile toggle -->
 		<div class="nav-actions">
+			<button class="lang-toggle" onclick={toggleLang} aria-label="Mudar idioma">
+				{i18n.locale.toUpperCase()}
+			</button>
 			<a href={BOOKING_URL} class="btn btn-primary nav-cta" target="_blank" rel="noopener">
-				Agendar
+				{t('nav.book')}
 			</a>
 			<button
 				class="hamburger"
@@ -60,9 +69,11 @@
 	<!-- Mobile drawer -->
 	{#if mobileOpen}
 		<div class="mobile-menu" role="dialog" aria-label="Menu móvel">
+			<button class="mobile-lang" onclick={toggleLang}>
+				Mudar idioma: {i18n.locale === 'pt' ? 'PT' : 'EN'}
+			</button>
 			{#each navLinks as link}
-				<a href={link.href} class="mobile-link" onclick={() => (mobileOpen = false)}
-					>{link.label}</a
+				<a href={link.href} class="mobile-link" onclick={() => (mobileOpen = false)}>{link.label}</a
 				>
 			{/each}
 			<a
@@ -72,7 +83,7 @@
 				rel="noopener"
 				onclick={() => (mobileOpen = false)}
 			>
-				Agendar Agora
+				{t('nav.bookNow')}
 			</a>
 		</div>
 	{/if}
@@ -176,6 +187,23 @@
 		font-size: 0.875rem;
 	}
 
+	.lang-toggle {
+		background: transparent;
+		border: 1.5px solid rgba(30, 58, 15, 0.2);
+		color: var(--forest);
+		font-weight: 600;
+		font-size: 0.8125rem;
+		border-radius: var(--radius-xl);
+		padding: 0.35rem 0.65rem;
+		cursor: pointer;
+		transition: all 0.2s;
+	}
+
+	.lang-toggle:hover {
+		background: rgba(30, 58, 15, 0.08);
+		border-color: var(--forest);
+	}
+
 	/* Hamburger */
 	.hamburger {
 		display: none;
@@ -226,6 +254,18 @@
 		color: var(--forest);
 		text-decoration: none;
 		border-bottom: 1px solid rgba(30, 58, 15, 0.06);
+	}
+
+	.mobile-lang {
+		background: transparent;
+		border: none;
+		text-align: left;
+		padding: 0.75rem 0.5rem;
+		font-size: 1.0625rem;
+		font-weight: 500;
+		color: var(--gold);
+		border-bottom: 1px solid rgba(30, 58, 15, 0.06);
+		cursor: pointer;
 	}
 
 	.mobile-cta {

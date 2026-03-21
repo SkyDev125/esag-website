@@ -1,16 +1,18 @@
 <script lang="ts">
+	import { t } from '$lib/i18n.svelte';
+
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
 
-	const hours = [
-		{ day: 'Segunda-feira', time: 'Encerrado' },
-		{ day: 'Terça-feira', time: '11:00 – 20:00' },
-		{ day: 'Quarta-feira', time: '11:00 – 20:00' },
-		{ day: 'Quinta-feira', time: '11:00 – 20:00' },
-		{ day: 'Sexta-feira', time: '11:00 – 20:00' },
-		{ day: 'Sábado', time: 'Encerrado' },
-		{ day: 'Domingo', time: 'Encerrado' }
-	];
+	const hours = $derived([
+		{ day: t('footer.days.1'), time: t('footer.closed') },
+		{ day: t('footer.days.2'), time: '11:00 – 20:00' },
+		{ day: t('footer.days.3'), time: '11:00 – 20:00' },
+		{ day: t('footer.days.4'), time: '11:00 – 20:00' },
+		{ day: t('footer.days.5'), time: '11:00 – 20:00' },
+		{ day: t('footer.days.6'), time: t('footer.closed') },
+		{ day: t('footer.days.0'), time: t('footer.closed') }
+	]);
 
 	const today = new Date().getDay(); // 0=Sun, 1=Mon...
 	// Map JS day (0-6) to our hours array index
@@ -30,19 +32,23 @@
 				</div>
 			</a>
 			<p class="footer-desc">
-				Centro de estética profissional em Lisboa. Cuidamos de si com dedicação e qualidade.
+				{t('footer.desc')}
 			</p>
 			<a href={BOOKING_URL} class="btn btn-gold footer-cta" target="_blank" rel="noopener">
-				Agendar Agora
+				{t('nav.bookNow')}
 			</a>
 		</div>
 
 		<!-- Hours -->
 		<div class="footer-col">
-			<h4 class="footer-heading">Horário</h4>
+			<h4 class="footer-heading">{t('footer.hours')}</h4>
 			<ul class="hours-list">
 				{#each hours as entry, i}
-					<li class="hours-item" class:today={i === todayIdx} class:closed={entry.time === 'Encerrado'}>
+					<li
+						class="hours-item"
+						class:today={i === todayIdx}
+						class:closed={entry.time === t('footer.closed')}
+					>
 						<span class="hours-day">{entry.day}</span>
 						<span class="hours-time">{entry.time}</span>
 					</li>
@@ -52,7 +58,7 @@
 
 		<!-- Contact & Location -->
 		<div class="footer-col">
-			<h4 class="footer-heading">Localização</h4>
+			<h4 class="footer-heading">{t('footer.location')}</h4>
 			<address class="footer-address">
 				<p>Av. Duque de Loulé 103, Loja 5</p>
 				<p>1050-045 Lisboa, Portugal</p>
@@ -66,16 +72,39 @@
 					rel="noopener"
 					class="footer-link"
 				>
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle
+							cx="12"
+							cy="10"
+							r="3"
+						/>
 					</svg>
-					Ver no Google Maps
+					{t('footer.linksMap')}
 				</a>
 				<a href={BOOKING_URL} target="_blank" rel="noopener" class="footer-link">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<rect x="3" y="4" width="18" height="18" rx="2" /><line
+							x1="16"
+							y1="2"
+							x2="16"
+							y2="6"
+						/><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
 					</svg>
-					Marcações na Fresha
+					{t('footer.linksBook')}
 				</a>
 			</div>
 
@@ -86,7 +115,7 @@
 					loading="lazy"
 					allowfullscreen
 					referrerpolicy="no-referrer-when-downgrade"
-				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDee2Hkam9BY0ApUkOIu8SnwVyhab3K53E&q=place_id:ChIJk-rEK2EzGQ0RMCaXvfwJHiE&zoom=16"
+					src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDee2Hkam9BY0ApUkOIu8SnwVyhab3K53E&q=place_id:ChIJk-rEK2EzGQ0RMCaXvfwJHiE&zoom=16"
 				></iframe>
 			</div>
 		</div>
@@ -96,10 +125,17 @@
 		<div class="wrapper footer-bottom-inner">
 			<p>&copy; {new Date().getFullYear()} Estética e Saúde Alexandra Gonçalves · Lisboa</p>
 			<p class="footer-accessibility">
-				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-					<circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+				<svg
+					width="12"
+					height="12"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+				>
+					<circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
 				</svg>
-				Acessível a cadeiras de rodas · Próximo de transportes públicos
+				{t('footer.accessWheelchair')} · {t('footer.accessTransport')}
 			</p>
 		</div>
 	</div>

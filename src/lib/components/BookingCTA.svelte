@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t } from '$lib/i18n.svelte';
+
 	const BOOKING_URL =
 		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
 </script>
@@ -9,28 +11,34 @@
 	</div>
 	<div class="wrapper cta-inner">
 		<div class="cta-content reveal">
-			<p class="section-label" style="color: var(--gold);">Pronta para começar?</p>
-			<h2 class="cta-title">Reserve hoje, sinta-se renovada amanhã.</h2>
+			<p class="section-label" style="color: var(--gold);">{t('cta.label')}</p>
+			<h2 class="cta-title">{t('cta.title')}</h2>
 			<p class="cta-sub">
-				Marque a sua consulta online em segundos. Escolha o horário que lhe convém e deixe o
-				resto connosco.
+				{t('cta.sub')}
 			</p>
 		</div>
 
 		<div class="cta-actions reveal reveal-delay-2">
 			<a href={BOOKING_URL} target="_blank" rel="noopener" class="btn btn-gold cta-btn">
-				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-					<rect x="3" y="4" width="18" height="18" rx="2"/>
-					<line x1="16" y1="2" x2="16" y2="6"/>
-					<line x1="8" y1="2" x2="8" y2="6"/>
-					<line x1="3" y1="10" x2="21" y2="10"/>
+				<svg
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2.5"
+				>
+					<rect x="3" y="4" width="18" height="18" rx="2" />
+					<line x1="16" y1="2" x2="16" y2="6" />
+					<line x1="8" y1="2" x2="8" y2="6" />
+					<line x1="3" y1="10" x2="21" y2="10" />
 				</svg>
-				Agendar na Fresha
+				{t('cta.book')}
 			</a>
 			<div class="cta-highlights">
-				<span>✓ Sem taxas de marcação</span>
-				<span>✓ Confirmação imediata</span>
-				<span>✓ Cancelamento fácil</span>
+				<span>✓ {t('cta.hilight1')}</span>
+				<span>✓ {t('cta.hilight2')}</span>
+				<span>✓ {t('cta.hilight3')}</span>
 			</div>
 		</div>
 	</div>
