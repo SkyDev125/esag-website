@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/private';
+import { PUBLIC_GOOGLE_PLACES_API_KEY } from '$env/static/public';
 import { fallbackReviews, mapGoogleReview, type Review } from '$lib/data/reviews.js';
 import type { PageServerLoad } from './$types.js';
 
@@ -7,7 +7,7 @@ import type { PageServerLoad } from './$types.js';
 const PLACE_ID = 'ChIJk-rEK2EzGQ0RMCaXvfwJHiE';
 
 export const load: PageServerLoad = async () => {
-	const apiKey = env.GOOGLE_PLACES_API_KEY;
+	const apiKey = PUBLIC_GOOGLE_PLACES_API_KEY;
 	let reviews: Review[] = fallbackReviews;
 
 	if (!apiKey) {
