@@ -2,7 +2,7 @@
 	import { t } from '$lib/i18n.svelte';
 
 	const BOOKING_URL =
-		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
+		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd/booking';
 
 	const hours = $derived([
 		{ day: t('footer.days.1'), time: t('footer.closed') },
