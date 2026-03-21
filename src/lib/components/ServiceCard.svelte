@@ -178,7 +178,10 @@
 		flex-direction: column;
 		gap: 0.25rem;
 		padding-top: 0.25rem;
-		padding-right: 4.5rem;
+	}
+
+	.service-card.featured .meta-info {
+		padding-right: 5.5rem;
 	}
 
 	.category-badge {
@@ -254,5 +257,22 @@
 		background: var(--forest);
 		color: var(--white);
 		transform: translateX(2px);
+	}
+
+	@media (max-width: 480px) {
+		.featured-tag {
+			top: 1rem;
+			right: 1rem;
+			padding: 0.3rem 0.6rem;
+			font-size: 0.6rem;
+		}
+		
+		.service-card.featured .meta-info {
+			padding-right: 4.5rem; /* Reduced because tag is smaller */
+		}
+		
+		.card-body {
+			padding: 1.25rem; /* Slightly less padding on mobile */
+		}
 	}
 </style>
