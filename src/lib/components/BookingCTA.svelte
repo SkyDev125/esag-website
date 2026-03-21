@@ -10,7 +10,7 @@
 	<div class="wrapper cta-inner">
 		<div class="cta-content reveal">
 			<p class="section-label" style="color: var(--gold);">Pronta para começar?</p>
-			<h2 class="cta-title">Reserve hoje,<br />sinta-se renovada amanhã.</h2>
+			<h2 class="cta-title">Reserve hoje, sinta-se renovada amanhã.</h2>
 			<p class="cta-sub">
 				Marque a sua consulta online em segundos. Escolha o horário que lhe convém e deixe o
 				resto connosco.
@@ -41,7 +41,8 @@
 		position: relative;
 		background: var(--forest);
 		overflow: hidden;
-		padding-block: 5rem;
+		padding-block: 6rem;
+		text-align: center;
 	}
 
 	.cta-bg {
@@ -52,84 +53,95 @@
 
 	.cta-blob {
 		position: absolute;
-		width: 600px;
-		height: 600px;
+		width: 800px;
+		height: 800px;
 		border-radius: 50%;
 		background: radial-gradient(circle, rgba(143, 198, 67, 0.15), transparent 70%);
-		right: -10%;
-		top: -50%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 
 	.cta-inner {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: space-between;
 		gap: 3rem;
-		flex-wrap: wrap;
 		position: relative;
 	}
 
 	.cta-content {
-		max-width: 48ch;
+		max-width: 60ch;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.section-label {
+		margin-bottom: 1rem;
 	}
 
 	.cta-title {
 		font-family: var(--font-serif);
-		font-size: clamp(2rem, 4vw, 3rem);
+		font-size: clamp(2rem, 5vw, 3.5rem);
 		color: var(--white);
-		line-height: 1.2;
-		margin-bottom: 1rem;
+		line-height: 1.1;
+		margin-bottom: 1.25rem;
 	}
 
 	.cta-sub {
-		color: rgba(255, 255, 255, 0.7);
-		font-size: 1rem;
-		line-height: 1.7;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 1.125rem;
+		line-height: 1.6;
+		max-width: 50ch;
 	}
 
 	.cta-actions {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
-		gap: 1.25rem;
-		flex-shrink: 0;
+		align-items: center;
+		gap: 1.5rem;
+		width: 100%;
 	}
 
 	.cta-btn {
-		font-size: 1.0625rem;
-		padding: 1rem 2.25rem;
-		white-space: nowrap;
+		font-size: 1.125rem;
+		padding: 1rem 2.5rem;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		justify-content: center;
 	}
 
 	.cta-highlights {
 		display: flex;
-		flex-direction: column;
-		gap: 0.4rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1.5rem;
 	}
 
 	.cta-highlights span {
-		font-size: 0.875rem;
-		color: rgba(255, 255, 255, 0.65);
+		font-size: 0.9375rem;
+		color: rgba(255, 255, 255, 0.7);
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
 	}
 
 	@media (max-width: 768px) {
-		.cta-inner {
-			flex-direction: column;
-			text-align: center;
+		.cta-section {
+			padding-block: 4rem;
 		}
 
-		.cta-actions {
+		.cta-highlights {
+			flex-direction: column;
+			gap: 0.75rem;
 			align-items: center;
-			width: 100%;
 		}
 
 		.cta-btn {
 			width: 100%;
-			justify-content: center;
-		}
-
-		.cta-highlights {
-			align-items: center;
+			max-width: 300px;
 		}
 	}
 </style>
