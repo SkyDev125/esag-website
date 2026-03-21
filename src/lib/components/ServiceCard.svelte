@@ -2,8 +2,6 @@
 	import type { Service } from '$lib/data/services.js';
 	import { i18n, t } from '$lib/i18n.svelte';
 
-	const BOOKING_URL =
-		'https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd';
 
 	let { service }: { service: Service } = $props();
 
@@ -84,7 +82,7 @@
 		<div class="card-footer">
 			<span class="price">{service.price}</span>
 			<a
-				href={BOOKING_URL}
+				href={`https://www.fresha.com/a/estetica-e-saude-alexandra-goncalves-lisboa-avenida-duque-de-loule-103-avpvjjbd/booking?menu=true&offerItems=sv%3A${service.id}`}
 				target="_blank"
 				rel="noopener"
 				class="book-btn"

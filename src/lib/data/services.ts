@@ -23,7 +23,7 @@ export type Category = (typeof CATEGORIES)[number];
 export const services: Service[] = [
 	// ── Massagens ─────────────────────────────────────────────────────────────
 	{
-		id: 'mass-relaxante',
+		id: '12313945',
 		category: 'Massagens',
 		name: 'Massagem Relaxante',
 		nameEn: 'Relaxing Massage',
@@ -32,7 +32,7 @@ export const services: Service[] = [
 		featured: true
 	},
 	{
-		id: 'mass-terapeutica',
+		id: '20853515',
 		category: 'Massagens',
 		name: 'Massagem Terapêutica',
 		nameEn: 'Therapeutic Massage (knots/contractions)',
@@ -41,7 +41,7 @@ export const services: Service[] = [
 		featured: true
 	},
 	{
-		id: 'mass-drenagem',
+		id: '12313920',
 		category: 'Massagens',
 		name: 'Drenagem Linfática',
 		nameEn: 'Lymphatic Drainage',
@@ -52,7 +52,7 @@ export const services: Service[] = [
 
 	// ── Rosto ─────────────────────────────────────────────────────────────────
 	{
-		id: 'rosto-limpeza',
+		id: '12313846',
 		category: 'Rosto',
 		name: 'Limpeza de Pele Profunda',
 		nameEn: 'Deep Skin Cleansing',
@@ -61,7 +61,7 @@ export const services: Service[] = [
 		featured: true
 	},
 	{
-		id: 'rosto-esfoliacao',
+		id: '12314276',
 		category: 'Rosto',
 		name: 'Esfoliação e Hidratação Facial',
 		nameEn: 'Facial Exfoliation & Hydration',
@@ -71,30 +71,22 @@ export const services: Service[] = [
 
 	// ── Depilação Feminina ────────────────────────────────────────────────────
 	{
-		id: 'dep-f-total',
+		id: '12314283',
 		category: 'Depilação Feminina',
-		name: 'Depilação Total',
-		nameEn: 'Total Hair Removal',
-		duration: '1h',
-		price: '€42'
-	},
-	{
-		id: 'dep-f-completa',
-		category: 'Depilação Feminina',
-		name: 'Depilação Completa Feminina',
-		nameEn: 'Full Female Waxing',
+		name: 'Depilação Completa',
+		nameEn: 'Complete Hair Removal',
 		duration: '45min',
-		price: '€35'
+		price: '€45'
 	},
 	{
-		id: 'dep-f-brazilian',
+		id: '26578246',
 		category: 'Depilação Feminina',
 		name: 'Brazilian Bikini Wax',
 		duration: '15min',
 		price: '€18'
 	},
 	{
-		id: 'dep-f-virilha',
+		id: '12314156',
 		category: 'Depilação Feminina',
 		name: 'Virilha Completa',
 		nameEn: 'Full Bikini / Full Crotch',
@@ -102,7 +94,7 @@ export const services: Service[] = [
 		price: '€15'
 	},
 	{
-		id: 'dep-f-glúteos',
+		id: '18247369',
 		category: 'Depilação Feminina',
 		name: 'Glúteos',
 		nameEn: 'Glutes',
@@ -110,7 +102,7 @@ export const services: Service[] = [
 		price: '€10'
 	},
 	{
-		id: 'dep-f-pernas',
+		id: '12314160',
 		category: 'Depilação Feminina',
 		name: 'Pernas Inteiras',
 		nameEn: 'Whole Legs',
@@ -118,7 +110,7 @@ export const services: Service[] = [
 		price: '€20'
 	},
 	{
-		id: 'dep-f-meia-perna',
+		id: '12314166',
 		category: 'Depilação Feminina',
 		name: 'Meia Perna',
 		nameEn: 'Half Leg',
@@ -126,7 +118,7 @@ export const services: Service[] = [
 		price: '€11'
 	},
 	{
-		id: 'dep-f-axilas',
+		id: '12314196',
 		category: 'Depilação Feminina',
 		name: 'Axilas',
 		nameEn: 'Armpits',
@@ -134,7 +126,7 @@ export const services: Service[] = [
 		price: '€8'
 	},
 	{
-		id: 'dep-f-bracos',
+		id: '12314211',
 		category: 'Depilação Feminina',
 		name: 'Braços',
 		nameEn: 'Arms',
@@ -142,17 +134,41 @@ export const services: Service[] = [
 		price: '€15'
 	},
 	{
-		id: 'dep-f-barriga',
+		id: '12314232',
 		category: 'Depilação Feminina',
-		name: 'Barriga',
-		nameEn: 'Belly',
+		name: 'Sobrancelha simples',
+		nameEn: 'Simple Eyebrow',
+		duration: '10min',
+		price: '€6'
+	},
+	{
+		id: '12314226',
+		category: 'Depilação Feminina',
+		name: 'Design de sobrancelha',
+		nameEn: 'Eyebrow shaping',
+		duration: '15min',
+		price: '€8'
+	},
+	{
+		id: '12314224',
+		category: 'Depilação Feminina',
+		name: 'Buço',
+		nameEn: 'Upper Lip',
+		duration: '5min',
+		price: '€4'
+	},
+	{
+		id: '12314190',
+		category: 'Depilação Feminina',
+		name: 'Virilha Cavada',
+		nameEn: 'Simple groin',
 		duration: '15min',
 		price: '€10'
 	},
 
 	// ── Depilação Masculina ───────────────────────────────────────────────────
 	{
-		id: 'dep-m-costas',
+		id: '20233030',
 		category: 'Depilação Masculina',
 		name: 'Costas',
 		nameEn: 'Back',
@@ -160,7 +176,7 @@ export const services: Service[] = [
 		price: '€20'
 	},
 	{
-		id: 'dep-m-peito',
+		id: '22994065',
 		category: 'Depilação Masculina',
 		name: 'Peito + Barriga',
 		nameEn: 'Chest + Belly',
@@ -168,7 +184,7 @@ export const services: Service[] = [
 		price: '€20'
 	},
 	{
-		id: 'dep-m-perna',
+		id: '20233049',
 		category: 'Depilação Masculina',
 		name: 'Perna Inteira',
 		nameEn: 'Whole Leg',
@@ -176,7 +192,7 @@ export const services: Service[] = [
 		price: '€25'
 	},
 	{
-		id: 'dep-m-bracos',
+		id: '20233070',
 		category: 'Depilação Masculina',
 		name: 'Braços',
 		nameEn: 'Arms',
@@ -184,7 +200,7 @@ export const services: Service[] = [
 		price: '€19'
 	},
 	{
-		id: 'dep-m-axilas',
+		id: '20233052',
 		category: 'Depilação Masculina',
 		name: 'Axilas',
 		nameEn: 'Armpits',
@@ -192,26 +208,42 @@ export const services: Service[] = [
 		price: '€8'
 	},
 	{
-		id: 'dep-m-gluteos',
+		id: '20296965',
 		category: 'Depilação Masculina',
 		name: 'Glúteos',
 		nameEn: 'Glutes',
 		duration: '15min',
 		price: '€15'
 	},
+	{
+		id: '20233008',
+		category: 'Depilação Masculina',
+		name: 'Peito',
+		nameEn: 'Chest',
+		duration: '25min',
+		price: '€15'
+	},
+	{
+		id: '20232985',
+		category: 'Depilação Masculina',
+		name: 'Virilha Integral',
+		nameEn: 'Full Groin',
+		duration: '25min',
+		price: '€25'
+	},
 
 	// ── Mãos ──────────────────────────────────────────────────────────────────
 	{
-		id: 'maos-manicure-gel',
+		id: '12314031',
 		category: 'Mãos',
 		name: 'Manicure + Gelinho',
 		nameEn: 'Manicure + Semi-Permanent Gel',
 		duration: '1h',
-		price: 'desde €17',
+		price: '€17',
 		featured: true
 	},
 	{
-		id: 'maos-remocao-gel',
+		id: '22004669',
 		category: 'Mãos',
 		name: 'Remoção de Gelinho + Manicure Normal',
 		nameEn: 'Gel Removal + Normal Manicure',
@@ -219,15 +251,7 @@ export const services: Service[] = [
 		price: '€15'
 	},
 	{
-		id: 'maos-app-gel',
-		category: 'Mãos',
-		name: 'Aplicação de Verniz Gelinho',
-		nameEn: 'Gel Polish Application',
-		duration: '45min',
-		price: '€15'
-	},
-	{
-		id: 'maos-manicure-normal',
+		id: '12314054',
 		category: 'Mãos',
 		name: 'Manicure Normal',
 		nameEn: 'Normal Manicure',
@@ -235,25 +259,41 @@ export const services: Service[] = [
 		price: '€10'
 	},
 	{
-		id: 'maos-verniz',
+		id: '18168987',
 		category: 'Mãos',
 		name: 'Mudança de Verniz',
 		nameEn: 'Nail Polish Change',
 		duration: '10min',
 		price: '€6,50'
 	},
+	{
+		id: '13035040',
+		category: 'Mãos',
+		name: 'Remoção de Gel',
+		nameEn: 'Gel Removal',
+		duration: '1h',
+		price: '€12'
+	},
+	{
+		id: '12314073',
+		category: 'Mãos',
+		name: 'Remoção de Gelinho',
+		nameEn: 'Gel Polish Removal',
+		duration: '1h',
+		price: '€12'
+	},
 
 	// ── Pés ───────────────────────────────────────────────────────────────────
 	{
-		id: 'pes-pedicure-gel',
+		id: '12314000',
 		category: 'Pés',
 		name: 'Pedicure + Gelinho',
 		nameEn: 'Pedicure + Gel',
 		duration: '1h',
-		price: '€30'
+		price: '€22.5'
 	},
 	{
-		id: 'pes-pedicure-simples',
+		id: '13034993',
 		category: 'Pés',
 		name: 'Pedicure Simples',
 		nameEn: 'Simple Pedicure',
@@ -261,15 +301,15 @@ export const services: Service[] = [
 		price: '€20'
 	},
 	{
-		id: 'pes-pedicure-masc',
+		id: '12314124',
 		category: 'Pés',
-		name: 'Pedicure Masculina',
-		nameEn: 'Male Pedicure',
-		duration: '45min',
-		price: '€20'
+		name: 'Pedicure Calista',
+		nameEn: 'Callus Pedicure',
+		duration: '1h',
+		price: '€25'
 	},
 	{
-		id: 'pes-embelezamento',
+		id: '13034946',
 		category: 'Pés',
 		name: 'Embelezamento das Unhas dos Pés',
 		nameEn: 'Toenail Beautification',
