@@ -488,7 +488,17 @@
 
 	@media (max-width: 480px) {
 		.pill {
-			display: none;
+			font-size: 0.75rem;
+			padding: 0.4rem 0.8rem;
+		}
+
+		.pill-top {
+			top: 1rem;
+			left: 0.5rem;
+		}
+
+		.pill-bottom {
+			right: 0.5rem;
 		}
 	}
 </style>

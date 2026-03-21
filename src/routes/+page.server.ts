@@ -8,6 +8,6 @@ export const load: PageServerLoad = async () => {
 	return {
 		reviews: fallbackReviews,
 		rating: 5,
-		ratingCount: 50
+		ratingCount: 87
 	};
 };
