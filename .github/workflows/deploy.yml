@@ -19,8 +19,7 @@ jobs:
 
       - name: Build
         env:
-          PUBLIC_GOOGLE_PLACES_API_KEY: ${{ secrets.PUBLIC_GOOGLE_PLACES_API_KEY }}
-          NODE_ENV: production
+          PUBLIC_GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
         run: bun run build
 
       - name: Upload artifact
