@@ -5,8 +5,27 @@
 	import BookingCTA from '$lib/components/BookingCTA.svelte';
 	import Reviews from '$lib/components/Reviews.svelte';
 	import type { PageData } from './$types.js';
+	import { fetchGoogleReviews, type Review } from '$lib/data/reviews.js';
 
 	let { data }: { data: PageData } = $props();
+
+	// Store live results from the client-side fetch separately
+	let liveData = $state<{ reviews: Review[]; rating: number | null; ratingCount: number | null } | null>(null);
+
+	// Derive values: use live data if available, otherwise use data from the server (fallbacks)
+	let reviews = $derived(liveData?.reviews ?? data.reviews);
+	let rating = $derived(liveData?.rating ?? data.rating);
+	let ratingCount = $derived(liveData?.ratingCount ?? data.ratingCount);
+
+	// Fetch live reviews in the browser to support domain-locked API keys
+	$effect(() => {
+		fetchGoogleReviews().then((res) => {
+			// Update the liveData state once the fetch completes
+			if (res.reviews.length > 0 && res.reviews[0].source === 'google') {
+				liveData = res;
+			}
+		});
+	});
 
 	// Scroll-reveal: immediately visible elements get .visible on mount,
 	// the rest animate in as they scroll into view.
@@ -33,8 +52,8 @@
 	<title>Estética e Saúde Alexandra Gonçalves | Lisboa</title>
 </svelte:head>
 
-<Hero rating={data.rating} ratingCount={data.ratingCount} />
+<Hero {rating} {ratingCount} />
 <About />
 <Services />
 <BookingCTA />
-<Reviews reviews={data.reviews} />
+<Reviews {reviews} />
