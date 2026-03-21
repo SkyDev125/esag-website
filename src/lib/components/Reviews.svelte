@@ -252,7 +252,12 @@
 		<!-- Leave review CTA -->
 		<div class="leave-review reveal">
 			<p>{t('reviews.leaveReview')}</p>
-			<a href="https://g.page/r/review" target="_blank" rel="noopener" class="btn btn-outline">
+			<a
+				href="https://search.google.com/local/writereview?placeid=ChIJk-rEK2EzGQ0RMCaXvfwJHiE"
+				target="_blank"
+				rel="noopener"
+				class="btn btn-outline"
+			>
 				{t('reviews.leaveReviewBtn')}
 			</a>
 		</div>

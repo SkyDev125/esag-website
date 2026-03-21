@@ -6,10 +6,29 @@
 	import { t } from '$lib/i18n.svelte';
 
 	let activeCategory: Category = $state('Todos');
+	let showAll = $state(false);
 
 	const filtered = $derived(
 		activeCategory === 'Todos' ? services : services.filter((s) => s.category === activeCategory)
 	);
+
+	const visibleServices = $derived(
+		showAll ? filtered : filtered.slice(0, 10)
+	);
+
+	function toggleShowMore() {
+		showAll = !showAll;
+		if (!showAll) {
+			// Small delay to allow DOM to update, optional
+			setTimeout(() => {
+				const section = document.getElementById('serviços');
+				if (section) {
+					const y = section.getBoundingClientRect().top + window.scrollY - 80;
+					window.scrollTo({ top: y, behavior: 'smooth' });
+				}
+			}, 10);
+		}
+	}
 </script>
 
 <section class="services-section section" id="serviços">
@@ -35,7 +54,7 @@
 						class="tab"
 						class:active={activeCategory === cat}
 						aria-selected={activeCategory === cat}
-						onclick={() => (activeCategory = cat)}
+						onclick={() => { activeCategory = cat; showAll = false; }}
 					>
 						{t(`categories.${cat}`)}
 					</button>
@@ -45,12 +64,20 @@
 
 		<!-- Grid -->
 		<div class="services-grid" role="tabpanel">
-			{#each filtered as service (service.id)}
+			{#each visibleServices as service (service.id)}
 				<div animate:flip={{ duration: 300 }} in:fade={{ duration: 200 }}>
 					<ServiceCard {service} />
 				</div>
 			{/each}
 		</div>
+
+		{#if filtered.length > 10}
+			<div class="show-more-container reveal">
+				<button class="btn btn-outline" onclick={toggleShowMore}>
+					{showAll ? t('services.showLess') : t('services.showMore')}
+				</button>
+			</div>
+		{/if}
 
 		<p class="services-note reveal">
 			{t('services.notePre')}
@@ -137,6 +164,17 @@
 		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 		gap: 1.5rem;
 		margin-bottom: 3rem;
+	}
+
+	.show-more-container {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 3.5rem;
+	}
+
+	.show-more-container .btn {
+		padding: 0.75rem 2rem;
+		font-size: 0.95rem;
 	}
 
 	.services-note {

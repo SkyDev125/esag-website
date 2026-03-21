@@ -87,7 +87,18 @@ export const dict: Record<Locale, Dictionary> = {
 			subtitle: 'serviços disponíveis. Escolha a categoria e agende directamente na Fresha.',
 			notePre: 'Preços e disponibilidade actualizados em',
 			featured: 'Destaque',
-			book: 'Agendar'
+			book: 'Agendar',
+			showMore: 'Mostrar mais',
+			showLess: 'Mostrar menos'
+		},
+		categories: {
+			'Todos': 'Todos',
+			'Massagens': 'Massagens',
+			'Rosto': 'Rosto',
+			'Depilação Feminina': 'Depilação Feminina',
+			'Depilação Masculina': 'Depilação Masculina',
+			'Mãos': 'Mãos',
+			'Pés': 'Pés'
 		},
 		reviews: {
 			label: 'Avaliações',
@@ -175,7 +186,9 @@ export const dict: Record<Locale, Dictionary> = {
 			subtitle: 'services available. Choose your category and book directly on Fresha.',
 			notePre: 'Prices and availability updated on',
 			featured: 'Featured',
-			book: 'Book'
+			book: 'Book',
+			showMore: 'Show more',
+			showLess: 'Show less'
 		},
 		categories: {
 			Todos: 'All',
