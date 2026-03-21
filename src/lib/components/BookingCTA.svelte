@@ -9,7 +9,7 @@
 	</div>
 	<div class="wrapper cta-inner">
 		<div class="cta-content reveal">
-			<p class="section-label" style="color: var(--gold-light);">Pronta para começar?</p>
+			<p class="section-label" style="color: var(--gold);">Pronta para começar?</p>
 			<h2 class="cta-title">Reserve hoje,<br />sinta-se renovada amanhã.</h2>
 			<p class="cta-sub">
 				Marque a sua consulta online em segundos. Escolha o horário que lhe convém e deixe o
@@ -55,7 +55,7 @@
 		width: 600px;
 		height: 600px;
 		border-radius: 50%;
-		background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
+		background: radial-gradient(circle, rgba(143, 198, 67, 0.15), transparent 70%);
 		right: -10%;
 		top: -50%;
 	}

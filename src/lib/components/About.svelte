@@ -188,7 +188,6 @@
 		.about-grid {
 			grid-template-columns: 1fr;
 			gap: 3rem;
-			text-align: center;
 		}
 
 		.portrait-photo {

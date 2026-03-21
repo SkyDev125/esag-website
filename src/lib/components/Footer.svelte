@@ -194,12 +194,16 @@
 		display: flex;
 		justify-content: space-between;
 		font-size: 0.875rem;
-		padding: 0.3rem 0;
+		padding: 0.4rem 0;
 	}
 
 	.hours-item.today {
-		color: var(--gold-light);
+		color: var(--white);
 		font-weight: 600;
+		background: rgba(255, 255, 255, 0.15);
+		padding-inline: 0.5rem;
+		margin-inline: -0.5rem;
+		border-radius: var(--radius-sm);
 	}
 
 	.hours-item.closed .hours-time {
@@ -215,7 +219,7 @@
 	}
 
 	.hours-item.today .hours-time {
-		color: var(--gold-light);
+		color: var(--white);
 	}
 
 	/* Address */
@@ -246,7 +250,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		font-size: 0.875rem;
-		color: var(--gold-light);
+		color: rgba(255, 255, 255, 0.7);
 		text-decoration: none;
 		transition: color 0.2s;
 	}

@@ -7,6 +7,27 @@
 	let { reviews }: { reviews: Review[] } = $props();
 
 	let activeIdx = $state(0);
+	let isPaused = $state(false);
+	let pauseTimeout: ReturnType<typeof setTimeout>;
+
+	function nextReview() {
+		activeIdx = (activeIdx + 1) % reviews.length;
+	}
+
+	function handleInteraction(newIdx: number) {
+		activeIdx = newIdx;
+		isPaused = true;
+		clearTimeout(pauseTimeout);
+		pauseTimeout = setTimeout(() => {
+			isPaused = false;
+		}, 10000);
+	}
+
+	$effect(() => {
+		if (isPaused) return;
+		const interval = setInterval(nextReview, 6000);
+		return () => clearInterval(interval);
+	});
 
 	function initials(name: string) {
 		return name
@@ -26,6 +47,54 @@
 			return '';
 		}
 	}
+
+	function handleAvatarError(e: Event) {
+		const img = e.currentTarget as HTMLImageElement;
+		img.style.display = 'none';
+		if (img.nextElementSibling) {
+			(img.nextElementSibling as HTMLElement).style.display = 'grid';
+		}
+	}
+
+	let startX = $state(0);
+	let isDragging = $state(false);
+
+	function handlePointerDown(e: PointerEvent) {
+		startX = e.clientX;
+		isDragging = true;
+		isPaused = true;
+		clearTimeout(pauseTimeout);
+	}
+
+	function handlePointerMove(e: PointerEvent) {
+		if (!isDragging) return;
+		const deltaX = e.clientX - startX;
+		
+		if (deltaX < -50) {
+			handleInteraction((activeIdx + 1) % reviews.length);
+			isDragging = false;
+		} else if (deltaX > 50) {
+			handleInteraction((activeIdx - 1 + reviews.length) % reviews.length);
+			isDragging = false;
+		}
+	}
+
+	function handlePointerEnd() {
+		if (isDragging) {
+			isDragging = false;
+			pauseTimeout = setTimeout(() => {
+				isPaused = false;
+			}, 10000);
+		}
+	}
+
+	function getOffset(i: number) {
+		let diff = i - activeIdx;
+		const half = reviews.length / 2;
+		if (diff > half) diff -= reviews.length;
+		else if (diff < -half) diff += reviews.length;
+		return diff;
+	}
 </script>
 
 <section class="reviews-section section" id="avaliações">
@@ -39,11 +108,28 @@
 			</p>
 		</div>
 
-		<!-- Carousel -->
 		<div class="carousel reveal reveal-delay-2">
-			<div class="carousel-track">
+			<div 
+				class="carousel-track"
+				role="region"
+				aria-roledescription="carousel"
+				onpointerdown={handlePointerDown}
+				onpointermove={handlePointerMove}
+				onpointerup={handlePointerEnd}
+				onpointerleave={handlePointerEnd}
+				onpointercancel={handlePointerEnd}
+			>
 				{#each reviews as review, i}
-					<article class="review-card" class:active={i === activeIdx} aria-hidden={i !== activeIdx}>
+					<article 
+						class="review-card" 
+						aria-hidden={i !== activeIdx}
+						style="
+							transform: translateX({getOffset(i) * 105}%); 
+							opacity: {i === activeIdx ? 1 : 0}; 
+							pointer-events: {i === activeIdx ? 'auto' : 'none'};
+							z-index: {i === activeIdx ? 2 : 1};
+						"
+					>
 						<!-- Stars -->
 						<div class="review-stars" aria-label="{review.rating} de 5 estrelas">
 							{#each Array(5) as _, s}
@@ -70,7 +156,14 @@
 						<!-- Author -->
 						<div class="review-author">
 							{#if review.avatar && review.source === 'google'}
-								<img src={review.avatar} alt={review.author} class="author-avatar" loading="lazy" />
+								<img 
+									src={review.avatar} 
+									alt={review.author} 
+									class="author-avatar" 
+									loading="lazy" 
+									onerror={handleAvatarError}
+								/>
+								<div class="author-initials" style="display: none;" aria-hidden="true">{initials(review.author)}</div>
 							{:else}
 								<div class="author-initials" aria-hidden="true">{initials(review.author)}</div>
 							{/if}
@@ -102,7 +195,7 @@
 						class:active={i === activeIdx}
 						aria-label="Avaliação {i + 1}"
 						aria-selected={i === activeIdx}
-						onclick={() => (activeIdx = i)}
+						onclick={() => handleInteraction(i)}
 					></button>
 				{/each}
 			</div>
@@ -112,7 +205,7 @@
 				<button
 					class="nav-btn"
 					aria-label="Anterior"
-					onclick={() => (activeIdx = (activeIdx - 1 + reviews.length) % reviews.length)}
+					onclick={() => handleInteraction((activeIdx - 1 + reviews.length) % reviews.length)}
 				>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
 						<polyline points="15 18 9 12 15 6"/>
@@ -121,7 +214,7 @@
 				<button
 					class="nav-btn"
 					aria-label="Próxima"
-					onclick={() => (activeIdx = (activeIdx + 1) % reviews.length)}
+					onclick={() => handleInteraction((activeIdx + 1) % reviews.length)}
 				>
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
 						<polyline points="9 18 15 12 9 6"/>
@@ -148,6 +241,7 @@
 <style>
 	.reviews-section {
 		background: linear-gradient(160deg, var(--cream) 0%, var(--cream-dark) 100%);
+		overflow: hidden;
 	}
 
 	.reviews-header {
@@ -163,13 +257,20 @@
 	}
 
 	.carousel-track {
-		position: relative;
-		min-height: 280px;
+		display: grid;
+		align-items: start;
+		touch-action: pan-y;
+		user-select: none;
+		-webkit-user-select: none;
+		cursor: grab;
+	}
+
+	.carousel-track:active {
+		cursor: grabbing;
 	}
 
 	.review-card {
-		position: absolute;
-		inset: 0;
+		grid-area: 1 / 1;
 		background: var(--white);
 		border-radius: var(--radius-lg);
 		padding: 2rem;
@@ -177,18 +278,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1.25rem;
-		opacity: 0;
-		transform: translateX(30px);
-		pointer-events: none;
 		transition:
-			opacity 0.4s ease,
-			transform 0.4s ease;
-	}
-
-	.review-card.active {
-		opacity: 1;
-		transform: none;
-		pointer-events: auto;
+			transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+			opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 	}
 
 	.review-stars {
@@ -202,7 +294,6 @@
 		color: var(--text-dark);
 		line-height: 1.7;
 		font-style: italic;
-		flex: 1;
 	}
 
 	.review-author {
@@ -216,6 +307,8 @@
 		height: 42px;
 		border-radius: 50%;
 		object-fit: cover;
+		flex-shrink: 0;
+		color: transparent;
 	}
 
 	.author-initials {
@@ -258,7 +351,7 @@
 		display: flex;
 		justify-content: center;
 		gap: 0.5rem;
-		margin-top: 8rem;
+		margin-top: 2.5rem;
 	}
 
 	.dot {

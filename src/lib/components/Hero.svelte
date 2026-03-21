@@ -151,7 +151,7 @@
 	.blob-1 {
 		width: 600px;
 		height: 600px;
-		background: radial-gradient(circle, #4a7c28, transparent);
+		background: radial-gradient(circle, var(--forest-light), transparent);
 		top: -20%;
 		right: -10%;
 		animation: drift1 12s ease-in-out infinite alternate;
@@ -160,7 +160,7 @@
 	.blob-2 {
 		width: 400px;
 		height: 400px;
-		background: radial-gradient(circle, #c9a84c, transparent);
+		background: radial-gradient(circle, var(--gold), transparent);
 		bottom: 0;
 		left: -10%;
 		animation: drift2 9s ease-in-out infinite alternate;
@@ -169,7 +169,7 @@
 	.blob-3 {
 		width: 300px;
 		height: 300px;
-		background: radial-gradient(circle, #2d5016, transparent);
+		background: radial-gradient(circle, var(--forest-mid), transparent);
 		top: 40%;
 		left: 40%;
 		animation: drift1 15s ease-in-out infinite alternate-reverse;

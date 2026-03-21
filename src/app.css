@@ -5,12 +5,12 @@
 :root {
 	/* Brand Palette */
 	--cream: #faf7f2;
-	--cream-dark: #f0ebe0;
-	--forest: #1e3a0f;
-	--forest-mid: #2d5016;
-	--forest-light: #4a7c28;
-	--gold: #c9a84c;
-	--gold-light: #e6c87a;
+	--cream-dark: #eef2e8;
+	--forest: #1e3a12;
+	--forest-mid: #3a6b29;
+	--forest-light: #62B446;
+	--gold: #8FC643;
+	--gold-light: #b0db70;
 	--white: #ffffff;
 	--text-dark: #1a1a1a;
 	--text-mid: #4a4a4a;
