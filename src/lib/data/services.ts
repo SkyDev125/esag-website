@@ -105,8 +105,8 @@ export const services: Service[] = [
 		id: '12314160',
 		category: 'Depilação Feminina',
 		name: 'Perna Inteira',
-		nameEn: 'Whole Legs',
-		duration: '25min',
+		nameEn: 'Whole Leg',
+		duration: '20min',
 		price: '€20',
 		featured: true
 	},
@@ -116,7 +116,7 @@ export const services: Service[] = [
 		name: 'Meia Perna',
 		nameEn: 'Half Leg',
 		duration: '15min',
-		price: '€11'
+		price: '€15'
 	},
 	{
 		id: '12314196',
@@ -124,14 +124,14 @@ export const services: Service[] = [
 		name: 'Axilas',
 		nameEn: 'Armpits',
 		duration: '10min',
-		price: '€8'
+		price: '€6'
 	},
 	{
 		id: '12314211',
 		category: 'Depilação Feminina',
 		name: 'Braços',
 		nameEn: 'Arms',
-		duration: '15min',
+		duration: '20min',
 		price: '€15'
 	},
 	{
@@ -257,7 +257,7 @@ export const services: Service[] = [
 		category: 'Mãos',
 		name: 'Manicure Normal',
 		nameEn: 'Normal Manicure',
-		duration: '45min',
+		duration: '30min',
 		price: '€10'
 	},
 	{
@@ -281,8 +281,8 @@ export const services: Service[] = [
 		category: 'Mãos',
 		name: 'Remoção de Gelinho',
 		nameEn: 'Gel Polish Removal',
-		duration: '1h',
-		price: '€12'
+		duration: '30min',
+		price: '€8'
 	},
 
 	// ── Pés ───────────────────────────────────────────────────────────────────
