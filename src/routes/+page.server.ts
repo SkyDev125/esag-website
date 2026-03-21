@@ -1,4 +1,3 @@
-import { PUBLIC_GOOGLE_PLACES_API_KEY } from '$env/static/public';
 import { fallbackReviews, mapGoogleReview, type Review } from '$lib/data/reviews.js';
 import type { PageServerLoad } from './$types.js';
 
@@ -7,19 +6,13 @@ import type { PageServerLoad } from './$types.js';
 const PLACE_ID = 'ChIJk-rEK2EzGQ0RMCaXvfwJHiE';
 
 export const load: PageServerLoad = async () => {
-	const apiKey = PUBLIC_GOOGLE_PLACES_API_KEY;
 	let reviews: Review[] = fallbackReviews;
-
-	if (!apiKey) {
-		console.warn('GOOGLE_PLACES_API_KEY not set – using fallback reviews');
-		return { reviews, rating: null, ratingCount: null };
-	}
 
 	try {
 		const url = `https://places.googleapis.com/v1/places/${PLACE_ID}`;
 		const res = await fetch(url, {
 			headers: {
-				'X-Goog-Api-Key': apiKey,
+				'X-Goog-Api-Key': 'AIzaSyDee2Hkam9BY0ApUkOIu8SnwVyhab3K53E',
 				'X-Goog-FieldMask': 'reviews,rating,userRatingCount'
 			}
 		});
