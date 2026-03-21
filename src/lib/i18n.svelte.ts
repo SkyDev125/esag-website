@@ -6,13 +6,13 @@ export const i18n = $state({
 
 export function initLanguage() {
 	if (typeof window === 'undefined') return;
-	
+
 	const saved = localStorage.getItem('locale');
 	if (saved === 'en' || saved === 'pt') {
 		i18n.locale = saved;
 		return;
 	}
-	
+
 	const browserLang = window.navigator.language;
 	if (browserLang && browserLang.toLowerCase().startsWith('en')) {
 		i18n.locale = 'en';
@@ -92,13 +92,14 @@ export const dict: Record<Locale, Dictionary> = {
 			showLess: 'Mostrar menos'
 		},
 		categories: {
-			'Todos': 'Todos',
-			'Massagens': 'Massagens',
-			'Rosto': 'Rosto',
+			Destaques: 'Destaques',
+			Todos: 'Todos',
+			Massagens: 'Massagens',
+			Rosto: 'Rosto',
 			'Depilação Feminina': 'Depilação Feminina',
 			'Depilação Masculina': 'Depilação Masculina',
-			'Mãos': 'Mãos',
-			'Pés': 'Pés'
+			Mãos: 'Mãos',
+			Pés: 'Pés'
 		},
 		reviews: {
 			label: 'Avaliações',
@@ -191,6 +192,7 @@ export const dict: Record<Locale, Dictionary> = {
 			showLess: 'Show less'
 		},
 		categories: {
+			Destaques: 'Featured',
 			Todos: 'All',
 			Massagens: 'Massages',
 			Rosto: 'Face',
@@ -241,7 +243,7 @@ export function t(keyStr: string): string {
 	const keys = keyStr.split('.');
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	let value: any = dict[i18n.locale];
-	
+
 	for (const k of keys) {
 		if (value === undefined || value === null) {
 			// Fallback to PT if key is missing in EN
@@ -255,7 +257,7 @@ export function t(keyStr: string): string {
 		}
 		value = value[k];
 	}
-	
+
 	if (value === undefined) {
 		// Fallback to PT
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -266,6 +268,6 @@ export function t(keyStr: string): string {
 		}
 		return (fallback as unknown as string) || keyStr;
 	}
-	
+
 	return value || keyStr;
 }

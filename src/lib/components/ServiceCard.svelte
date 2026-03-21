@@ -2,7 +2,6 @@
 	import type { Service } from '$lib/data/services.js';
 	import { i18n, t } from '$lib/i18n.svelte';
 
-
 	let { service }: { service: Service } = $props();
 
 	const categoryStyles: Record<string, { bg: string; color: string }> = {

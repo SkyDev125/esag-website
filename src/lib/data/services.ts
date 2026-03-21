@@ -9,6 +9,7 @@ export type Service = {
 };
 
 export const CATEGORIES = [
+	'Destaques',
 	'Todos',
 	'Massagens',
 	'Rosto',
@@ -28,8 +29,7 @@ export const services: Service[] = [
 		name: 'Massagem Relaxante',
 		nameEn: 'Relaxing Massage',
 		duration: '1h',
-		price: '€40',
-		featured: true
+		price: '€40'
 	},
 	{
 		id: '20853515',
@@ -37,8 +37,7 @@ export const services: Service[] = [
 		name: 'Massagem Terapêutica',
 		nameEn: 'Therapeutic Massage (knots/contractions)',
 		duration: '1h',
-		price: '€50',
-		featured: true
+		price: '€50'
 	},
 	{
 		id: '12313920',
@@ -91,7 +90,8 @@ export const services: Service[] = [
 		name: 'Virilha Completa',
 		nameEn: 'Full Bikini / Full Crotch',
 		duration: '15min',
-		price: '€15'
+		price: '€15',
+		featured: true
 	},
 	{
 		id: '18247369',
@@ -104,10 +104,11 @@ export const services: Service[] = [
 	{
 		id: '12314160',
 		category: 'Depilação Feminina',
-		name: 'Pernas Inteiras',
+		name: 'Perna Inteira',
 		nameEn: 'Whole Legs',
 		duration: '25min',
-		price: '€20'
+		price: '€20',
+		featured: true
 	},
 	{
 		id: '12314166',
@@ -229,7 +230,8 @@ export const services: Service[] = [
 		name: 'Virilha Integral',
 		nameEn: 'Full Groin',
 		duration: '25min',
-		price: '€25'
+		price: '€25',
+		featured: true
 	},
 
 	// ── Mãos ──────────────────────────────────────────────────────────────────

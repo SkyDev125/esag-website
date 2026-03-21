@@ -5,16 +5,18 @@
 	import { fade } from 'svelte/transition';
 	import { t } from '$lib/i18n.svelte';
 
-	let activeCategory: Category = $state('Todos');
+	let activeCategory = $state<Category>('Destaques');
 	let showAll = $state(false);
 
 	const filtered = $derived(
-		activeCategory === 'Todos' ? services : services.filter((s) => s.category === activeCategory)
+		(activeCategory as string) === 'Todos'
+			? services
+			: (activeCategory as string) === 'Destaques'
+				? services.filter((s) => s.featured)
+				: services.filter((s) => s.category === activeCategory)
 	);
 
-	const visibleServices = $derived(
-		showAll ? filtered : filtered.slice(0, 10)
-	);
+	const visibleServices = $derived(showAll ? filtered : filtered.slice(0, 10));
 
 	function toggleShowMore() {
 		showAll = !showAll;
@@ -54,7 +56,10 @@
 						class="tab"
 						class:active={activeCategory === cat}
 						aria-selected={activeCategory === cat}
-						onclick={() => { activeCategory = cat; showAll = false; }}
+						onclick={() => {
+							activeCategory = cat;
+							showAll = false;
+						}}
 					>
 						{t(`categories.${cat}`)}
 					</button>
@@ -72,7 +77,7 @@
 		</div>
 
 		{#if filtered.length > 10}
-			<div class="show-more-container reveal">
+			<div class="show-more-container">
 				<button class="btn btn-outline" onclick={toggleShowMore}>
 					{showAll ? t('services.showLess') : t('services.showMore')}
 				</button>
