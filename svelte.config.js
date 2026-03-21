@@ -13,9 +13,6 @@ const config = {
                 if (path === '/') return 'ignore'; // Suppress error for '/'
                 throw new Error(message);
             }
-        },
-        paths: {
-            base: process.argv.includes('dev') ? '' : '/esag-website'
         }
     },
     vitePlugin: {
