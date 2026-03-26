@@ -153,13 +153,22 @@
 
 	<div class="footer-bottom">
 		<div class="wrapper footer-bottom-inner">
-			<p>&copy; {new Date().getFullYear()} Estética e Saúde Alexandra Gonçalves · Lisboa</p>
-			<p class="footer-accessibility">
-				<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-					<circle cx="12" cy="12" r="10" /><path d="M12 8v4l3 3" />
-				</svg>
-				{t('footer.accessWheelchair')} · {t('footer.accessTransport')}
-			</p>
+			<p class="footer-copyright">&copy; {new Date().getFullYear()} Estética e Saúde Alexandra Gonçalves · Lisboa</p>
+			<div class="footer-accessibility">
+				<span class="access-item">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+					</svg>
+					{t('footer.accessWheelchair')}
+				</span>
+				<span class="access-dot">·</span>
+				<span class="access-item">
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+					</svg>
+					{t('footer.accessTransport')}
+				</span>
+			</div>
 		</div>
 	</div>
 </footer>
@@ -466,15 +475,29 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: 1rem 2rem;
 		font-size: 0.8125rem;
-		color: rgba(255, 255, 255, 0.4);
+		color: rgba(255, 255, 255, 0.45);
 	}
 
 	.footer-accessibility {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem 0.75rem;
+	}
+
+	.access-item {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		white-space: nowrap;
+	}
+
+	.access-item svg {
+		opacity: 0.8;
+		color: var(--gold);
 	}
 
 	@media (max-width: 1024px) {
@@ -526,6 +549,15 @@
 		.footer-bottom-inner {
 			flex-direction: column;
 			text-align: center;
+		}
+
+		.footer-accessibility {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		.access-dot {
+			display: none;
 		}
 	}
 </style>
