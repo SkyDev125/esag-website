@@ -342,7 +342,7 @@
 		}
 	}
 
-	@media (max-width: 420px) {
+	@media (max-width: 430px) {
 		.nav-links {
 			display: none;
 		}
@@ -355,8 +355,14 @@
 		.hamburger {
 			display: flex;
 		}
-		.lang-switcher {
-			display: none;
+		.lang-switcher{
+			width: 4rem;
+			height: 2rem;
+		}
+		.nav-inner{
+			gap: 1rem;
+			padding-left: 1rem;
+			padding-right: 1rem;
 		}
 	}
 </style>
