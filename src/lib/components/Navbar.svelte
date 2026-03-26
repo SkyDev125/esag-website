@@ -48,9 +48,26 @@
 
 		<!-- CTA + Mobile toggle -->
 		<div class="nav-actions">
-			<button class="lang-toggle" onclick={toggleLang} aria-label="Mudar idioma">
-				{i18n.locale.toUpperCase()}
-			</button>
+			<div class="lang-switcher" class:lang-en={i18n.locale === 'en'}>
+				<div class="lang-active-bg"></div>
+				<button 
+					class="lang-btn" 
+					class:active={i18n.locale === 'pt'} 
+					onclick={() => setLanguage('pt')}
+					aria-label="Português"
+				>
+					PT
+				</button>
+				<button 
+					class="lang-btn" 
+					class:active={i18n.locale === 'en'} 
+					onclick={() => setLanguage('en')}
+					aria-label="English"
+				>
+					EN
+				</button>
+			</div>
+
 			<a href={BOOKING_URL} class="btn btn-primary nav-cta" target="_blank" rel="noopener">
 				{t('nav.book')}
 			</a>
@@ -71,7 +88,7 @@
 	{#if mobileOpen}
 		<div class="mobile-menu" role="dialog" aria-label="Menu móvel">
 			<button class="mobile-lang" onclick={toggleLang}>
-				Mudar idioma: {i18n.locale === 'pt' ? 'PT' : 'EN'}
+				{t('nav.changeLang')}: {i18n.locale === 'pt' ? 'PT' : 'EN'}
 			</button>
 			{#each navLinks as link}
 				<a href={link.href} class="mobile-link" onclick={() => (mobileOpen = false)}>{link.label}</a
@@ -188,21 +205,56 @@
 		font-size: 0.875rem;
 	}
 
-	.lang-toggle {
-		background: transparent;
-		border: 1.5px solid rgba(30, 58, 15, 0.2);
-		color: var(--forest);
-		font-weight: 600;
-		font-size: 0.8125rem;
+	.lang-switcher {
+		display: flex;
+		background: rgba(30, 58, 15, 0.05);
+		padding: 2px;
 		border-radius: var(--radius-xl);
-		padding: 0.35rem 0.65rem;
-		cursor: pointer;
-		transition: all 0.2s;
+		border: 1px solid rgba(30, 58, 15, 0.1);
+		position: relative;
+		height: 2.25rem;
+		width: 5.5rem;
+		box-sizing: border-box;
 	}
 
-	.lang-toggle:hover {
-		background: rgba(30, 58, 15, 0.08);
-		border-color: var(--forest);
+	.lang-btn {
+		flex: 1;
+		background: transparent;
+		border: none;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: var(--forest);
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+		transition: color 0.3s ease, opacity 0.3s ease;
+		opacity: 0.5;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.lang-btn.active {
+		opacity: 1;
+		color: var(--forest);
+	}
+
+	.lang-active-bg {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: calc(50% - 2px);
+		height: calc(100% - 4px);
+		background: var(--white);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		border-radius: var(--radius-lg);
+		transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		z-index: 1;
+	}
+
+	.lang-en .lang-active-bg {
+		transform: translateX(100%);
 	}
 
 	/* Hamburger */
@@ -281,6 +333,9 @@
 		}
 		.nav-cta {
 			display: none;
+		}
+		.nav-actions {
+			margin-left: auto;
 		}
 		.hamburger {
 			display: flex;

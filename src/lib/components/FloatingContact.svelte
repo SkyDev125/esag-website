@@ -5,7 +5,7 @@
 
 	let isOpen = $state(false);
 
-	const links = [
+	const links = $derived([
 		{
 			id: 'whatsapp',
 			href: 'https://wa.me/351964846982',
@@ -41,7 +41,7 @@
 			icon: 'tiktok',
 			color: '#000000'
 		}
-	];
+	]);
 
 	function toggleMenu() {
 		isOpen = !isOpen;

@@ -46,7 +46,8 @@ export const dict: Record<Locale, Dictionary> = {
 			reviews: 'Avaliações',
 			contact: 'Contacto',
 			book: 'Agendar',
-			bookNow: 'Agendar Agora'
+			bookNow: 'Agendar Agora',
+			changeLang: 'Mudar idioma'
 		},
 		hero: {
 			badge: 'Lisboa · Marquês de Pombal',
@@ -152,7 +153,8 @@ export const dict: Record<Locale, Dictionary> = {
 			reviews: 'Reviews',
 			contact: 'Contact',
 			book: 'Book',
-			bookNow: 'Book Now'
+			bookNow: 'Book Now',
+			changeLang: 'Change language'
 		},
 		hero: {
 			badge: 'Lisbon · Marquês de Pombal',
