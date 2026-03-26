@@ -35,6 +35,7 @@ type Dictionary = {
 	reviews: Record<string, string>;
 	cta: Record<string, string>;
 	footer: Record<string, any>;
+	contact: Record<string, string>;
 };
 
 export const dict: Record<Locale, Dictionary> = {
@@ -136,6 +137,12 @@ export const dict: Record<Locale, Dictionary> = {
 			linksBook: 'Marcações na Fresha',
 			accessWheelchair: 'Acessível a cadeiras de rodas',
 			accessTransport: 'Próximo de transportes públicos'
+		},
+		contact: {
+			heading: 'Contacto',
+			phone: 'Ligar',
+			whatsapp: 'WhatsApp',
+			socials: 'Redes Sociais'
 		}
 	},
 	en: {
@@ -235,6 +242,12 @@ export const dict: Record<Locale, Dictionary> = {
 			linksBook: 'Book on Fresha',
 			accessWheelchair: 'Wheelchair accessible',
 			accessTransport: 'Near public transit'
+		},
+		contact: {
+			heading: 'Contact',
+			phone: 'Call',
+			whatsapp: 'WhatsApp',
+			socials: 'Social Media'
 		}
 	}
 };

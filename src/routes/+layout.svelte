@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import FloatingContact from '$lib/components/FloatingContact.svelte';
 	import { initLanguage } from '$lib/i18n.svelte';
 
 	let { children } = $props();
@@ -21,3 +22,4 @@
 	{@render children()}
 </main>
 <Footer />
+<FloatingContact />
