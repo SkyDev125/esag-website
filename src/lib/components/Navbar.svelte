@@ -327,7 +327,7 @@
 		justify-content: center;
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 850px) {
 		.nav-links {
 			display: none;
 		}
@@ -339,6 +339,24 @@
 		}
 		.hamburger {
 			display: flex;
+		}
+	}
+
+	@media (max-width: 420px) {
+		.nav-links {
+			display: none;
+		}
+		.nav-cta {
+			display: none;
+		}
+		.nav-actions {
+			margin-left: auto;
+		}
+		.hamburger {
+			display: flex;
+		}
+		.lang-switcher {
+			display: none;
 		}
 	}
 </style>
