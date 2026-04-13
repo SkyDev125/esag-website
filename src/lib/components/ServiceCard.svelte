@@ -266,11 +266,11 @@
 			padding: 0.3rem 0.6rem;
 			font-size: 0.6rem;
 		}
-		
+
 		.service-card.featured .meta-info {
 			padding-right: 4.5rem; /* Reduced because tag is smaller */
 		}
-		
+
 		.card-body {
 			padding: 1.25rem; /* Slightly less padding on mobile */
 		}

@@ -17,7 +17,11 @@
 		<!-- Visual side -->
 		<div class="about-visual reveal">
 			<div class="portrait-frame">
-				<img src={asset('/mom.webp')} alt="Alexandra Gonçalves - Esteticista" class="portrait-photo" />
+				<img
+					src={asset('/mom.webp')}
+					alt="Alexandra Gonçalves - Esteticista"
+					class="portrait-photo"
+				/>
 				<div class="portrait-badge">
 					<span class="badge-icon">✦</span>
 					<span>{t('about.badge')}</span>

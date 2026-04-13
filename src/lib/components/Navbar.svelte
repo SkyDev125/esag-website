@@ -50,17 +50,17 @@
 		<div class="nav-actions">
 			<div class="lang-switcher" class:lang-en={i18n.locale === 'en'}>
 				<div class="lang-active-bg"></div>
-				<button 
-					class="lang-btn" 
-					class:active={i18n.locale === 'pt'} 
+				<button
+					class="lang-btn"
+					class:active={i18n.locale === 'pt'}
 					onclick={() => setLanguage('pt')}
 					aria-label="Português"
 				>
 					PT
 				</button>
-				<button 
-					class="lang-btn" 
-					class:active={i18n.locale === 'en'} 
+				<button
+					class="lang-btn"
+					class:active={i18n.locale === 'en'}
 					onclick={() => setLanguage('en')}
 					aria-label="English"
 				>
@@ -227,7 +227,9 @@
 		cursor: pointer;
 		position: relative;
 		z-index: 2;
-		transition: color 0.3s ease, opacity 0.3s ease;
+		transition:
+			color 0.3s ease,
+			opacity 0.3s ease;
 		opacity: 0.5;
 		padding: 0;
 		display: flex;
@@ -355,11 +357,11 @@
 		.hamburger {
 			display: flex;
 		}
-		.lang-switcher{
+		.lang-switcher {
 			width: 4rem;
 			height: 2rem;
 		}
-		.nav-inner{
+		.nav-inner {
 			gap: 1rem;
 			padding-left: 1rem;
 			padding-right: 1rem;

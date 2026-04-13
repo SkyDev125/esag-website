@@ -108,7 +108,11 @@
 		<!-- Visual / image side -->
 		<div class="hero-visual reveal reveal-delay-2">
 			<div class="hero-card">
-				<img src={asset('/store.avif')} alt="Clínica de Estética e Saúde em Lisboa" class="card-image" />
+				<img
+					src={asset('/store.avif')}
+					alt="Clínica de Estética e Saúde em Lisboa"
+					class="card-image"
+				/>
 				<div class="card-info">
 					<div class="card-stat">
 						<span class="stat-num">35+</span>
@@ -505,7 +509,6 @@
 			right: 0.5rem;
 		}
 	}
-
 
 	@media (max-width: 480px) {
 		.pill {

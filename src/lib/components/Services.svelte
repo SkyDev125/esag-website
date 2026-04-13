@@ -25,12 +25,12 @@
 				// The 8th item will become the last item. It doesn't move when others are deleted.
 				const eighthItem = grid.children[7];
 				const eighthBottom = eighthItem.getBoundingClientRect().bottom + window.scrollY;
-				
+
 				// Calculate ideal viewport position so the bottom of the screen aligns perfectly under the button
 				const targetY = eighthBottom + 180 - window.innerHeight;
 				window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
 			}
-			
+
 			// Wait for the window to finish scrolling, putting the extra cards completely out of view.
 			// Then safely delete them so the user never sees them "disappear"!
 			setTimeout(() => {
@@ -175,7 +175,7 @@
 		.tabs-container {
 			margin-bottom: 2.5rem;
 		}
-		
+
 		.tabs {
 			gap: 0.5rem;
 		}
@@ -222,5 +222,4 @@
 	.services-note a:hover {
 		text-decoration-color: var(--forest-light);
 	}
-
 </style>

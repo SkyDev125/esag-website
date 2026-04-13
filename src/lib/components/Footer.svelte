@@ -21,7 +21,11 @@
 
 	const socials = [
 		{ id: 'instagram', icon: 'instagram', href: 'https://www.instagram.com/alexandragoncalveses/' },
-		{ id: 'facebook', icon: 'facebook', href: 'https://www.facebook.com/esteticaesaudealexandragoncalves' },
+		{
+			id: 'facebook',
+			icon: 'facebook',
+			href: 'https://www.facebook.com/esteticaesaudealexandragoncalves'
+		},
 		{ id: 'tiktok', icon: 'tiktok', href: 'https://www.tiktok.com/@estetica_alexa_goncalves' }
 	];
 </script>
@@ -52,15 +56,33 @@
 					<span class="group-label">{t('contact.heading')}:</span>
 					<div class="contact-grid">
 						<a href="tel:+351964846982" class="contact-link link-phone">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.38 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+							<svg
+								width="14"
+								height="14"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2.5"
+							>
+								<path
+									d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.38 2 2 0 0 1 3.57 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6.29 6.29l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+								/>
 							</svg>
 							<span>{t('contact.phone')}</span>
 						</a>
-						<a href="https://wa.me/351964846982" target="_blank" rel="noopener" class="contact-link link-whatsapp">
+						<a
+							href="https://wa.me/351964846982"
+							target="_blank"
+							rel="noopener"
+							class="contact-link link-whatsapp"
+						>
 							<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-								<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-								<path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.843L.057 23.571a.5.5 0 0 0 .611.611l5.729-1.474A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.003-1.367l-.358-.214-3.713.955.976-3.584-.234-.369A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+								<path
+									d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+								/>
+								<path
+									d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.843L.057 23.571a.5.5 0 0 0 .611.611l5.729-1.474A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 0 1-5.003-1.367l-.358-.214-3.713.955.976-3.584-.234-.369A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"
+								/>
 							</svg>
 							<span>WhatsApp</span>
 						</a>
@@ -71,18 +93,30 @@
 					<span class="group-label">{t('contact.socials')}:</span>
 					<div class="social-icons">
 						{#each socials as social}
-							<a href={social.href} target="_blank" rel="noopener" class="social-icon icon-{social.id}" aria-label={social.id}>
+							<a
+								href={social.href}
+								target="_blank"
+								rel="noopener"
+								class="social-icon icon-{social.id}"
+								aria-label={social.id}
+							>
 								{#if social.icon === 'instagram'}
 									<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-										<path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.162 3.547.645 2.268 1.924.99 3.202.507 4.852.417 6.707.014 7.987 0 8.396 0 12s.014 4.013.072 5.293c.09 1.855.573 3.505 1.852 4.784 1.279 1.279 2.929 1.762 4.784 1.852C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.09 3.505-.573 4.784-1.852 1.279-1.279 1.762-2.929 1.852-4.784.058-1.28.072-1.689.072-5.293s-.014-4.013-.072-5.293c-.09-1.855-.573-3.505-1.852-4.784C20.453.645 18.803.162 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+										<path
+											d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.162 3.547.645 2.268 1.924.99 3.202.507 4.852.417 6.707.014 7.987 0 8.396 0 12s.014 4.013.072 5.293c.09 1.855.573 3.505 1.852 4.784 1.279 1.279 2.929 1.762 4.784 1.852C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.855-.09 3.505-.573 4.784-1.852 1.279-1.279 1.762-2.929 1.852-4.784.058-1.28.072-1.689.072-5.293s-.014-4.013-.072-5.293c-.09-1.855-.573-3.505-1.852-4.784C20.453.645 18.803.162 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"
+										/>
 									</svg>
 								{:else if social.icon === 'facebook'}
 									<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-										<path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.024 4.388 11.017 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.025 1.79-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.09 24 18.097 24 12.073z"/>
+										<path
+											d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.024 4.388 11.017 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.025 1.79-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.09 24 18.097 24 12.073z"
+										/>
 									</svg>
 								{:else}
 									<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-										<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+										<path
+											d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"
+										/>
 									</svg>
 								{/if}
 							</a>
@@ -125,14 +159,37 @@
 					rel="noopener"
 					class="footer-link"
 				>
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle
+							cx="12"
+							cy="10"
+							r="3"
+						/>
 					</svg>
 					{t('footer.linksMap')}
 				</a>
 				<a href={BOOKING_URL} target="_blank" rel="noopener" class="footer-link">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-						<rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+					>
+						<rect x="3" y="4" width="18" height="18" rx="2" /><line
+							x1="16"
+							y1="2"
+							x2="16"
+							y2="6"
+						/><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
 					</svg>
 					{t('footer.linksBook')}
 				</a>
@@ -153,18 +210,38 @@
 
 	<div class="footer-bottom">
 		<div class="wrapper footer-bottom-inner">
-			<p class="footer-copyright">&copy; {new Date().getFullYear()} Estética e Saúde Alexandra Gonçalves · Lisboa</p>
+			<p class="footer-copyright">
+				&copy; {new Date().getFullYear()} Estética e Saúde Alexandra Gonçalves · Lisboa
+			</p>
 			<div class="footer-accessibility">
 				<span class="access-item">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" />
 					</svg>
 					{t('footer.accessWheelchair')}
 				</span>
 				<span class="access-dot">·</span>
 				<span class="access-item">
-					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-						<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>
+					<svg
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<circle cx="12" cy="12" r="10" /><path d="m9 12 2 2 4-4" />
 					</svg>
 					{t('footer.accessTransport')}
 				</span>
@@ -249,7 +326,8 @@
 		gap: 1.125rem;
 	}
 
-	.contact-group, .socials-group {
+	.contact-group,
+	.socials-group {
 		display: flex;
 		flex-direction: column;
 		gap: 0.625rem;
@@ -303,11 +381,21 @@
 	}
 
 	.link-phone::after {
-		background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.2) 50%, transparent 100%);
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(212, 175, 55, 0.2) 50%,
+			transparent 100%
+		);
 	}
 
 	.link-whatsapp::after {
-		background: linear-gradient(90deg, transparent 0%, rgba(37, 211, 102, 0.2) 50%, transparent 100%);
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(37, 211, 102, 0.2) 50%,
+			transparent 100%
+		);
 	}
 
 	.contact-link:hover {
@@ -366,9 +454,22 @@
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 	}
 
-	.icon-instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
-	.icon-facebook:hover { background: #1877f2; }
-	.icon-tiktok:hover { background: #000; }
+	.icon-instagram:hover {
+		background: radial-gradient(
+			circle at 30% 107%,
+			#fdf497 0%,
+			#fdf497 5%,
+			#fd5949 45%,
+			#d6249f 60%,
+			#285aeb 90%
+		);
+	}
+	.icon-facebook:hover {
+		background: #1877f2;
+	}
+	.icon-tiktok:hover {
+		background: #000;
+	}
 
 	.footer-col {
 		display: flex;

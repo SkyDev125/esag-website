@@ -10,7 +10,11 @@
 	let { data }: { data: PageData } = $props();
 
 	// Store live results from the client-side fetch separately
-	let liveData = $state<{ reviews: Review[]; rating: number | null; ratingCount: number | null } | null>(null);
+	let liveData = $state<{
+		reviews: Review[];
+		rating: number | null;
+		ratingCount: number | null;
+	} | null>(null);
 
 	// Derive values: use live data if available, otherwise use data from the server (fallbacks)
 	let reviews = $derived(liveData?.reviews ?? data.reviews);
