@@ -27,9 +27,12 @@
 		});
 	});
 
-	// Scroll-reveal: immediately visible elements get .visible on mount,
-	// the rest animate in as they scroll into view.
+	// Scroll-reveal: mark all elements already at/above the viewport as
+	// immediately visible (so anchor scroll positions are calculated correctly),
+	// then animate the rest in as they scroll into view.
 	$effect(() => {
+		const viewportBottom = window.innerHeight;
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
@@ -42,7 +45,16 @@
 			{ threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
 		);
 
-		document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+		document.querySelectorAll('.reveal').forEach((el) => {
+			const rect = el.getBoundingClientRect();
+			// If the element is already at or above the fold, make it visible immediately
+			// so it doesn't affect scroll position calculations for anchor links
+			if (rect.top < viewportBottom) {
+				el.classList.add('visible');
+			} else {
+				observer.observe(el);
+			}
+		});
 
 		return () => observer.disconnect();
 	});
