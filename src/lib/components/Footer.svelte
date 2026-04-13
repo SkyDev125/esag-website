@@ -177,6 +177,7 @@
 	.footer {
 		background: var(--forest);
 		color: rgba(255, 255, 255, 0.85);
+		scroll-margin-top: 4.5rem;
 	}
 
 	.footer-grid {
