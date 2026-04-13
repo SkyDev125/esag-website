@@ -173,7 +173,7 @@ export const services: Service[] = [
 		category: 'Depilação Masculina',
 		name: 'Costas',
 		nameEn: 'Back',
-		duration: '25min',
+		duration: '20min',
 		price: '€20'
 	},
 	{
@@ -181,7 +181,7 @@ export const services: Service[] = [
 		category: 'Depilação Masculina',
 		name: 'Peito + Barriga',
 		nameEn: 'Chest + Belly',
-		duration: '1h',
+		duration: '20min',
 		price: '€20'
 	},
 	{
@@ -221,7 +221,7 @@ export const services: Service[] = [
 		category: 'Depilação Masculina',
 		name: 'Peito',
 		nameEn: 'Chest',
-		duration: '25min',
+		duration: '20min',
 		price: '€15'
 	},
 	{
@@ -241,7 +241,7 @@ export const services: Service[] = [
 		name: 'Manicure + Gelinho',
 		nameEn: 'Manicure + Semi-Permanent Gel',
 		duration: '1h',
-		price: '€17',
+		price: '€19',
 		featured: true
 	},
 	{
@@ -249,7 +249,7 @@ export const services: Service[] = [
 		category: 'Mãos',
 		name: 'Remoção de Gelinho + Manicure Normal',
 		nameEn: 'Gel Removal + Normal Manicure',
-		duration: '1h 35min',
+		duration: '40min',
 		price: '€15'
 	},
 	{
@@ -269,19 +269,11 @@ export const services: Service[] = [
 		price: '€6,50'
 	},
 	{
-		id: '13035040',
-		category: 'Mãos',
-		name: 'Remoção de Gel',
-		nameEn: 'Gel Removal',
-		duration: '1h',
-		price: '€12'
-	},
-	{
 		id: '12314073',
 		category: 'Mãos',
 		name: 'Remoção de Gelinho',
 		nameEn: 'Gel Polish Removal',
-		duration: '30min',
+		duration: '15min',
 		price: '€8'
 	},
 
@@ -292,7 +284,7 @@ export const services: Service[] = [
 		name: 'Pedicure + Gelinho',
 		nameEn: 'Pedicure + Gel',
 		duration: '1h',
-		price: '€22.5'
+		price: '€25'
 	},
 	{
 		id: '13034993',
